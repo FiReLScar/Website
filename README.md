@@ -1,6 +1,6 @@
 <h1 align="center">Portfolio - Levi Hicks</h1>
 <div align="center">
-   <i>Link - C++</i>
+   <i>Next - NodeJS</i>
 </div>
 
 ## Libraries used
