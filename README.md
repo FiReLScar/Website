@@ -3,16 +3,17 @@
    <i>Link - C++</i>
 </div>
 
-## What is Link?
-Link is a basic webserver library that I made in C++
-
+## Libraries used
+I used NextJS and TailWindCSS with PostCSS
 ## How is this hosted
-I used Nginx for SSL and to allow for subdomains, and hosted it on AWS.
-
+I used Vercel to host this.
 ## How to run
+Please make sure you have NodeJS and NPM installed.
+
+I personally used node@18.4.0 and npm@8.12.1
 ```shell
-make
+npm i
 ```
 ```shell
-make run
+npm start
 ```
