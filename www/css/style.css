@@ -1,0 +1,244 @@
+/* Public Styles */
+* {
+  margin: 0;
+  outline: 0;
+  font-family: 'JetBrains Mono', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+body.dark {
+  background-color: #2D2D2D;
+}
+
+*:not(input) {
+  user-select: none;
+}
+
+/* Navbar */
+body>div.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 12rem;
+}
+
+body>div.navbar>div.right {
+  display: flex;
+  align-items: center;
+}
+
+body>div.navbar>div.right>a:not(.dark) {
+  text-decoration: none;
+  font-size: 24px;
+  color: #707070;
+  margin-left: 3rem;
+}
+
+body>div.navbar>div.right>a.dark {
+  text-decoration: none;
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: 3rem;
+}
+
+body>div.navbar>div.right>a.active:not(.dark) {
+  color: #fff;
+  background-color: #2D2D2D;
+}
+body>div.navbar>div.right>a.active.dark {
+  color: #2D2D2D;
+  background-color: #fff;
+}
+
+body>div.navbar>div.right>a:not(.active, .dark) {
+  color: #707070;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+body>div.navbar>div.right>a:not(.active, .dark):hover {
+  background-color: transparent;
+  text-shadow: none;
+  color: white;
+}
+
+body>div.navbar>div.right>a:not(.active):hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
+body>div.navbar>div.right>a:not(.active, .dark):before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  background-color: #2D2D2D;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+body>div.navbar>div.right>.dark:not(.active) {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+body>div.navbar>div.right>.dark:not(.active):hover {
+  background-color: transparent;
+  text-shadow: none;
+  color: #2D2D2D;
+}
+
+body>div.navbar>div.right>.dark:not(.active):before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  background-color: #ffffff;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+/* Hero */
+body>div.hero {
+  display: flex;
+  margin: 5rem 12rem;
+  height: 70vh;
+}
+
+body>div.hero>div.left {
+  display: flex;
+  flex-direction: column;
+}
+
+body>div.hero>div.left>span.title:not(.dark) {
+  font-size: 80px;
+  color: #606060;
+}
+
+body>div.hero>div.left>span.title.dark {
+  font-size: 80px;
+  color: #fff;
+}
+
+body>div.hero>div.left>span.subtitle {
+  font-size: 34px;
+  color: #AAAAAA;
+  margin-left: 6px;
+}
+
+body>div.hero>div.left>a.github {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+div.bottom {
+  display: flex;
+  align-items: end;
+  height: 100%;
+}
+
+span.hint {
+  font-size: 24px;
+  color: #707070;
+  width: 80%;
+  margin-top: 8rem;
+}
+
+span.hint>span.command:not(.dark) {
+  font-size: 24px;
+  color: #ABB2BF;
+  background-color: #2D2D2D;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+
+span.hint>span.command.dark {
+  font-size: 24px;
+  color: #2D2D2D;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+}
+
+body>div.hero>div.left>a.github>span:not(.dark) {
+  font-size: 32px;
+  color: #606060;
+  margin-left: 1rem;
+}
+
+body>div.hero>div.left>a.github>span.dark {
+  font-size: 32px;
+  color: #AAAAAA;
+  margin-left: 1rem;
+}
+
+body>div.hero>div.right {
+  flex-grow: 1;
+}
+
+body>div.hero>div.right>div.terminal {
+  flex-direction: column;
+  max-width: 100%;
+  padding: 1.5rem;
+  background-color: #2D2D2D;
+  border-radius: 15px;
+  border: 1px solid #707070;
+}
+
+body>div.hero>div.right>div.terminal>div.line {
+  display: flex;
+  font-size: 24px;
+}
+
+body>div.hero>div.right>div.terminal span.username, body>div.hero>div.right>div.terminal span.at, body>div.hero>div.right>div.terminal span.hostname {
+  color: #98C379;
+}
+
+body>div.hero>div.right>div.terminal span.white {
+  color: #ABB2BF;
+}
+
+body>div.hero>div.right>div.terminal span.path {
+  color: #61AFEF;
+}
+
+@media (max-width: 1800px) {
+  .hero {
+    flex-direction: column;
+  }
+  .terminal {
+    height: 400px;
+  }
+  .left, .hero>.right {
+    margin: 0;
+    width: 100%;
+  }
+  .left {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (min-width: 1801px) {
+  .hero {
+    flex-direction: row;
+  }
+  .terminal {
+    height: 100%;
+  }
+  .hero>.right {
+    width: 70%;
+  }
+}

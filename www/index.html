@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Levi Hicks - Portfolio</title>
+    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono&display=swap' rel='stylesheet' async>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <object type="image/svg+xml" data="/levi.svg" width="118.19" height="68.86" alt="Levi" id="levi"></object>
+      <div class="right">
+        <a href="/projects" class="active">Projects</a>
+        <a href="/about">About</a>
+        <a href="/resume">Resume</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero">
+      <div class="left">
+        <span class="title">Levi Hicks</span>
+        <span class="subtitle">Low-Level Developer.</span>
+        <a class="github" href="https://github.com/FiReLScar" alt="github">
+          <object type="image/svg+xml" data="/github.svg" width="50" height="50" id="github-logo"></object>
+          <span class="title">GitHub</span>
+        </a>
+        <div class="bottom">
+          <span class="hint">Enter <span class="command">ls</span> in the terminal to list the different projects.</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="terminal">
+          <div class="line">
+            <span class="username">levi</span>
+            <span class="at">@</span>
+            <span class="hostname">null</span>
+            <span class="white">:</span>
+            <span class="path">~</span>
+            <span class="white">$</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.body.classList.add("dark");
+        document.querySelectorAll("body>div.navbar>div.right>a").forEach(e=>{
+          e.classList.add("dark");
+        })
+        document.querySelectorAll("body>div.hero .title").forEach(e=>{
+          e.classList.add("dark");
+        })
+        document.querySelectorAll(".command").forEach(e=>{
+          e.classList.add("dark");
+        })
+        document.getElementById("github-logo").setAttribute("data", "/github-dark.svg");
+        document.getElementById("levi").setAttribute("data", "/levi-dark.svg");
+      }
+    </script>
+  </body>
+</html>
