@@ -150,7 +150,17 @@ a.active {
   padding: 0 5px;
 }
 
+.line>.prompt {
+  color: #98c379;
+}
 
+.line>.prompt>span:nth-child(1), .line>.prompt>span:nth-child(3) {
+  color: #abb2bf;
+}
+
+.line>.prompt>span:nth-child(2) {
+  color: #61afef;
+}
 
 
 
