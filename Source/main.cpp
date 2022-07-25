@@ -14,26 +14,32 @@ int main() {
   
   // Landing Page
   http.Get("/", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "text/html; charset=UTF-8");
     res->SendFile("www/index.html");
   });
 
   http.Get("/css/style.css", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "text/css; charset=UTF-8");
     res->SendFile("www/css/style.css");
   });
 
   // Levi
   http.Get("/levi.svg", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "image/svg+xml");
     res->SendFile("www/levi.svg");
   });
   http.Get("/levi-dark.svg", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "image/svg+xml");
     res->SendFile("www/levi-dark.svg");
   });
 
   // GitHub Logo
   http.Get("/github.svg", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "image/svg+xml");
     res->SendFile("www/github.svg");
   });
   http.Get("/github-dark.svg", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "image/svg+xml");
     res->SendFile("www/github-dark.svg");
   });
 
