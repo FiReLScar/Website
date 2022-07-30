@@ -77,6 +77,32 @@
       </div>
     </div>
     <script>
+      // Dark mode
+      let toggleDark = () => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.body.classList.add("dark");
+          document.querySelectorAll("div.navbar>div.right>a").forEach(e=>e.classList.add("dark"))
+          document.querySelectorAll(".menu>a").forEach(e=>e.classList.add("dark"))
+          document.querySelectorAll(".title").forEach(e=>e.classList.add("dark"))
+          document.querySelectorAll(".hint>span").forEach(e=>e.classList.add("dark"))
+          document.querySelectorAll(".github>span").forEach(e=>e.classList.add("dark"))
+          document.querySelectorAll(".github>svg").forEach(e=>e.classList.add("dark"))
+          document.querySelectorAll(".levi").forEach(e=>e.classList.add("dark"))
+        } else {
+          document.body.classList.remove("dark");
+          document.querySelectorAll("div.navbar>div.right>a").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".menu>a").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".title").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".hint>span").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".github>span").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".github>svg").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".levi").forEach(e=>e.classList.remove("dark"))
+        }
+      }
+
+      toggleDark();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => toggleDark())
+      
       // Open and close the menu on small screens
       document.querySelector('.navbar>.close-menu').style.display = 'none'
       document.querySelector('.hero>.menu').style.display = 'none'

@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,42 +6,54 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 24 20:18:22 2022
+# Make data base, printed on Sat Jul 30 17:32:53 2022
 
 # Variables
 
 # environment
+GDK_BACKEND = x11
+# environment
 LC_ALL = C
 # environment
-PULSE_SERVER = /mnt/wslg/PulseServer
+GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-WSLENV = VSCODE_WSL_EXT_LOCATION/up
+SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
-VSCODE_CWD = /mnt/c/Users/fire/AppData/Local/Programs/Microsoft VS Code
+SNAP_INSTANCE_KEY = 
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_CWD = /home/fire
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_HANDLES_SIGPIPE = true
+QT_ACCESSIBILITY = 1
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/fire/levihicks
+PWD = /home/fire/Website
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-OLDPWD = /mnt/c/Users/fire/AppData/Local/Programs/Microsoft VS Code
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
 %F = $(notdir $%)
 # environment
+VSCODE_CODE_CACHE_PATH = /home/fire/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
 LANG = C
+# environment
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.LMT7P1
 # default
 .LOADED := 
 # default
@@ -51,115 +61,199 @@ LANG = C
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/fire/levihicks
+CURDIR := /home/fire/Website
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
 # environment
 WAYLAND_DISPLAY = wayland-0
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST := Makefile
+# environment
+SNAP_REEXEC = 
 # automatic
 @F = $(notdir $@)
 # environment
-ZSH = /home/fire/.oh-my-zsh
+VSCODE_PID = 3010
+# environment
+XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+SESSION_MANAGER = local/0n3:@/tmp/.ICE-unix/1362,unix/0n3:/tmp/.ICE-unix/1362
 # automatic
 *F = $(notdir $*)
 # makefile (from 'Makefile', line 4)
 Objects = $(patsubst Source/%.cpp, Build/%.o, $(CPPSourceCode))
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
 SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
 # environment
+XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
 SHLVL = 0
 # environment
 MAKELEVEL := 0
+# environment
+IM_CONFIG_CHECK_ENV = 1
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/fire/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Oculus/Support/oculus-runtime:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Nginx:/mnt/c/Program Files (x86)/sox-14-4-2:/mnt/c/Program Files (x86)/FFAIO/bin:/mnt/c/Program Files/qemu:/mnt/c/metasploit-framework/bin/:/mnt/c/Users/fire/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/fire/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/fire/AppData/Roaming/npm:/mnt/c/Users/fire/AppData/Local/GitHubDesktop/bin:/mnt/c/Program Files (x86)/Nmap:/mnt/c/Program Files/JetBrains/IntelliJ IDEA Community Edition 2022.1.3/bin
+SNAP_COOKIE = 594evH-NzXVM8ZjE_txHxo_D7RQZ_jhSXFq5wP4ZFMpEts2uhuAG
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # default
 MAKEFILES := 
 # automatic
 ^F = $(notdir $^)
+# environment
+SNAP_USER_COMMON = /home/fire/snap/code/common
+# environment
+SNAP = /snap/code/102
+# environment
+INVOCATION_ID = c93545c1e8834bee87adb77fdc012808
+# environment
+SNAP_REVISION = 102
+# environment
+SNAP_REAL_HOME = /home/fire
+# environment
+USERNAME = fire
+# environment
+GNOME_SETUP_DISPLAY = :1
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
 ?F = $(notdir $?)
 # environment
-NAME = V01d
+XDG_CURRENT_DESKTOP = Unity
 # environment
-HOSTTYPE = x86_64
-# environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # automatic
 +F = $(notdir $+)
 # environment
-LESS = -R
+DESKTOP_SESSION = ubuntu
 # environment
-WSL_INTEROP = /run/WSL/11_interop
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = fire
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/fire/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := default
+# environment
+SYSTEMD_EXEC_PID = 1389
 # environment
 DISPLAY = :0
 # environment
 USER = fire
+# environment
+GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
+# environment
+DISABLE_WAYLAND = 1
+# environment
+SNAP_DATA = /var/snap/code/102
+# environment
+SNAP_CONTEXT = 594evH-NzXVM8ZjE_txHxo_D7RQZ_jhSXFq5wP4ZFMpEts2uhuAG
+# environment
+MANAGERPID = 1158
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2964
 # makefile (from 'Makefile', line 3)
 CPPSourceCode = $(call rwildcard,Source,*.cpp)
 # environment
-PAGER = less
+_ = /snap/code/102/usr/share/code/code
 # environment
-_ = /home/fire/.vscode-server/bin/3b889b090b5ad5793f524b5d1d39fda662b96a2a/node
+XDG_RUNTIME_DIR = /run/user/1000
 # environment
-XDG_RUNTIME_DIR = /mnt/wslg/runtime-dir
+GDK_PIXBUF_MODULE_FILE = /home/fire/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # makefile (from 'Makefile', line 5)
 Directories = $(wildcard Source/*)
 # environment
-VSCODE_IPC_HOOK_CLI = /mnt/wslg/runtime-dir/vscode-ipc-e26c7167-5112-4411-b3bc-a33b716bb720.sock
+JOURNAL_STREAM = 8:48619
+# environment
+XDG_SESSION_CLASS = user
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/fire
 # environment
+QT_IM_MODULE = ibus
+# environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-TERM = xterm-256color
+VSCODE_IPC_HOOK = /run/user/1000/vscode-1d76451a-1.69.2-main.sock
+# environment
+SNAP_NAME = code
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
+# environment
+IM_CONFIG_PHASE = 1
 # default
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
+# environment
+SNAP_VERSION = 3b889b09
 # default
 SUFFIXES := 
 # environment
-WSL_DISTRO_NAME = Ubuntu-22.04
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+SNAP_USER_DATA = /home/fire/snap/code/102
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = ubuntu
 # makefile (from 'Makefile', line 1)
 rwildcard = $(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(subst *,%,$2),$d))
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=73/1024=7%, Rehash=0, Collisions=1/109=1%
+# Load=121/1024=12%, Rehash=0, Collisions=3/157=2%
 
 # Pattern-specific Variable Values
 
@@ -167,9 +261,9 @@ rwildcard = $(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(
 
 # Directories
 
-# . (device 2080, inode 83504): 12 files, no impossibilities.
-# Source/main.cpp (device 2080, inode 142357): could not be opened.
-# Source (device 2080, inode 142145): 3 files, no impossibilities.
+# . (device 2051, inode 14027763): 12 files, no impossibilities.
+# Source/main.cpp (device 2051, inode 14027899): could not be opened.
+# Source (device 2051, inode 14027894): 3 files, no impossibilities.
 
 # 15 files, no impossibilities in 3 directories.
 
@@ -185,6 +279,9 @@ Build/%.o: Source/%.cpp
 
 default: Build/main.o
 #  Implicit rule search has not been done.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -193,7 +290,7 @@ default: Build/main.o
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-19 19:15:39.315586563
+#  Last modified 2022-07-29 04:55:43.286760666
 #  File has been updated.
 #  Successfully updated.
 
@@ -237,6 +334,6 @@ Build/main.o:
 # strcache performance: lookups = 33 / hit rate = 27%
 # hash-table stats:
 # Load=24/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Sun Jul 24 20:18:22 2022
+# Finished Make data base on Sat Jul 30 17:32:53 2022
 
  
