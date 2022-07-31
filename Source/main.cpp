@@ -79,7 +79,7 @@ int main() {
   });
 
   http.Get("/sitemap.xml", [](Request* req, Response* res) {
-    res->SetHeader("Content-Type", "application/xml")
+    res->SetHeader("Content-Type", "application/xml");
     res->SendFile("www/sitemap.xml");
   });
 
