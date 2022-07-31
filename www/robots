@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /resume
+Allow: /contact
+Allow: /css/*
+Allow: /favicon.ico
+
+Sitemap: https://levihicks.dev/sitemap.xml

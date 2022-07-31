@@ -259,20 +259,21 @@ a.active.dark {
   font-size: 24px;
 }
 
-.main>.title.dark {
-  font-size: 88px;
-  color: white;
+.main>.title {
   margin-bottom: 1rem;
+  font-size: 44px;
+}
+
+.main>.title.dark {
+  color: white;
 }
 
 .main>.title:not(.dark) {
-  font-size: 88px;
   color: #606060;
-  margin-bottom: 1rem;
 }
 
 .main>.description.dark {
-  color: white;
+  color: #ccc;
 }
 
 .main>.description:not(.dark) {
@@ -336,6 +337,11 @@ a.active.dark {
 
   .hint {
     font-size: 16px;
+  }
+
+  .main>.description {
+    font-size: 14px;
+    margin-bottom: 4rem;
   }
 }
 
@@ -456,6 +462,10 @@ a.active.dark {
   }
 
   .left-top>.top>.title.dark {
+    font-size: 80px;
+  }
+
+  .main>.title {
     font-size: 80px;
   }
   

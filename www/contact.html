@@ -24,9 +24,9 @@
         </svg>
         <div class="right">
           <a href="/">Projects</a>
-          <a href="/about" class="active">About</a>
+          <a href="/about">About</a>
           <a href="/resume">Resume</a>
-          <a href="/contact">Contact</a>
+          <a href="/contact" class="active">Contact</a>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" class="close-menu" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -42,9 +42,8 @@
         <a href="/contact">Contact</a>
       </div>
       <div class="main">
-        <span class="title">About</span>
-        <span class="description">I am a developer that mainly works on compilers, operating systems, and anything low-level. I also do high-level development, such as webdev, and game modding. I am what one would call a unicorn developer.</span>
-        <span class="description">My primary language is C++, but I've worked with NodeJS, Java, Python, and many others.</span>
+        <span class="title">Contact</span>
+        This page has not been finished yet!
       </div>
     </div>
     <style>
@@ -74,7 +73,7 @@
           document.querySelectorAll("div.navbar>div.right>a").forEach(e=>e.classList.remove("dark"))
           document.querySelectorAll(".menu>a").forEach(e=>e.classList.remove("dark"))
           document.querySelectorAll(".title").forEach(e=>e.classList.remove("dark"))
-          document.querySelectorAll(".description").forEach(e=>e.classList.remove("dark"))
+          document.querySelectorAll(".description").forEach(e=>e.classList.add("dark"))
           document.querySelectorAll(".levi").forEach(e=>e.classList.remove("dark"))
         }
       }
