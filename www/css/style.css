@@ -35,10 +35,12 @@ body.dark {
 /* Navbar Name */
 .navbar>svg.levi:not(.dark) {
   fill: #4B4B4B;
+  cursor: pointer;
 }
 
 .navbar>svg.levi.dark {
   fill: white;
+  cursor: pointer;
 }
 
 /* Navbar Mobile Menu */
