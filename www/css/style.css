@@ -113,7 +113,7 @@ body.dark {
 /* Mobile Navmenu */
 .hero>.menu {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -297,7 +297,7 @@ a.active.dark {
   }
 
   .bottom {
-    position: absolute;
+    position: fixed;
     bottom: 1rem;
     left: 0;
     display: flex;
@@ -355,7 +355,7 @@ a.active.dark {
   }
 
   .bottom {
-    position: absolute;
+    position: fixed;
     bottom: 1rem;
     left: 0;
     display: flex;

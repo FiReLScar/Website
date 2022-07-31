@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jul 30 17:32:53 2022
+# Make data base, printed on Sat Jul 30 22:21:22 2022
 
 # Variables
 
@@ -53,7 +55,7 @@ VSCODE_CODE_CACHE_PATH = /home/fire/.config/Code/CachedData/3b889b090b5ad5793f52
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.LMT7P1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.H5FEQ1
 # default
 .LOADED := 
 # default
@@ -89,7 +91,7 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 3010
+VSCODE_PID = 3816
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -97,7 +99,7 @@ XDG_SESSION_TYPE = wayland
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # environment
-SESSION_MANAGER = local/0n3:@/tmp/.ICE-unix/1362,unix/0n3:/tmp/.ICE-unix/1362
+SESSION_MANAGER = local/0n3:@/tmp/.ICE-unix/1297,unix/0n3:/tmp/.ICE-unix/1297
 # automatic
 *F = $(notdir $*)
 # makefile (from 'Makefile', line 4)
@@ -143,7 +145,7 @@ SNAP_USER_COMMON = /home/fire/snap/code/common
 # environment
 SNAP = /snap/code/102
 # environment
-INVOCATION_ID = c93545c1e8834bee87adb77fdc012808
+INVOCATION_ID = 2e401aa8e863463eab6ff812b04413d3
 # environment
 SNAP_REVISION = 102
 # environment
@@ -177,7 +179,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := default
 # environment
-SYSTEMD_EXEC_PID = 1389
+SYSTEMD_EXEC_PID = 1320
 # environment
 DISPLAY = :0
 # environment
@@ -193,9 +195,9 @@ SNAP_DATA = /var/snap/code/102
 # environment
 SNAP_CONTEXT = 594evH-NzXVM8ZjE_txHxo_D7RQZ_jhSXFq5wP4ZFMpEts2uhuAG
 # environment
-MANAGERPID = 1158
+MANAGERPID = 1134
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2964
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3769
 # makefile (from 'Makefile', line 3)
 CPPSourceCode = $(call rwildcard,Source,*.cpp)
 # environment
@@ -207,7 +209,7 @@ GDK_PIXBUF_MODULE_FILE = /home/fire/snap/code/common/.cache/gdk-pixbuf-loaders.c
 # makefile (from 'Makefile', line 5)
 Directories = $(wildcard Source/*)
 # environment
-JOURNAL_STREAM = 8:48619
+JOURNAL_STREAM = 8:41715
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -280,8 +282,6 @@ Build/%.o: Source/%.cpp
 default: Build/main.o
 #  Implicit rule search has not been done.
  
-make: *** No rule to make target 'all'.  Stop.
-
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
@@ -334,6 +334,6 @@ Build/main.o:
 # strcache performance: lookups = 33 / hit rate = 27%
 # hash-table stats:
 # Load=24/8192=0%, Rehash=0, Collisions=0/33=0%
-# Finished Make data base on Sat Jul 30 17:32:53 2022
+# Finished Make data base on Sat Jul 30 22:21:22 2022
 
  

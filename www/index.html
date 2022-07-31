@@ -13,7 +13,8 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#2d2d2d" media="(prefers-color-scheme: dark)">
   </head>
   <body>
     <div class="hero">
@@ -87,7 +88,7 @@
       // Dark mode
       let toggleDark = () => {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.body.classList.add("dark");
+          document.body.classList.add("dark")
           document.querySelectorAll("div.navbar>div.right>a").forEach(e=>e.classList.add("dark"))
           document.querySelectorAll(".menu>a").forEach(e=>e.classList.add("dark"))
           document.querySelectorAll(".title").forEach(e=>e.classList.add("dark"))
@@ -96,7 +97,7 @@
           document.querySelectorAll(".github>svg").forEach(e=>e.classList.add("dark"))
           document.querySelectorAll(".levi").forEach(e=>e.classList.add("dark"))
         } else {
-          document.body.classList.remove("dark");
+          document.body.classList.remove("dark")
           document.querySelectorAll("div.navbar>div.right>a").forEach(e=>e.classList.remove("dark"))
           document.querySelectorAll(".menu>a").forEach(e=>e.classList.remove("dark"))
           document.querySelectorAll(".title").forEach(e=>e.classList.remove("dark"))
