@@ -1,7 +1,4 @@
 <h1 align="center">Portfolio - Levi Hicks</h1>
-<div align="center">
-   <i>Link - C++</i>
-</div>
 
 ## What is Link?
 Link is a basic webserver library that I made in C++
