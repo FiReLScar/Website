@@ -22,6 +22,12 @@ int main() {
     res->SetHeader("Content-Type", "text/css; charset=UTF-8");
     res->SendFile("www/css/style.css");
   });
+  
+  // About Page
+  http.Get("/about", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "text/html; charset=UTF-8");
+    res->SendFile("www/about.html");
+  });
 
   // Favicon
   http.Get("/android-chrome-192x192.png", [](Request* req, Response* res) {

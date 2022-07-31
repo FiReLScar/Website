@@ -251,7 +251,31 @@ a.active.dark {
   color: #61afef;
 }
 
+/* About */
+.main>.description {
+  margin-bottom: 8rem;
+  font-size: 24px;
+}
 
+.main>.title.dark {
+  font-size: 88px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.main>.title:not(.dark) {
+  font-size: 88px;
+  color: #606060;
+  margin-bottom: 1rem;
+}
+
+.main>.description.dark {
+  color: white;
+}
+
+.main>.description:not(.dark) {
+  color: #606060;
+}
 
 
 /* Responsive Styles */
