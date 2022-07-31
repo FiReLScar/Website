@@ -23,39 +23,36 @@ int main() {
     res->SendFile("www/css/style.css");
   });
 
-  // Levi
-  http.Get("/levi.svg", [](Request* req, Response* res) {
-    res->SetHeader("Content-Type", "image/svg+xml");
-    res->SendFile("www/levi.svg");
+  // Favicon
+  http.Get("/android-chrome-192x192.png", [](Request* req, Response* res) {
+    res->SendFile("www/android-chrome-192x192.png");
   });
-  http.Get("/levi-dark.svg", [](Request* req, Response* res) {
-    res->SetHeader("Content-Type", "image/svg+xml");
-    res->SendFile("www/levi-dark.svg");
+  http.Get("/android-chrome-512x512.png", [](Request* req, Response* res) {
+    res->SendFile("www/android-chrome-512x512.png");
   });
-
-  // GitHub Logo
-  http.Get("/github.svg", [](Request* req, Response* res) {
-    res->SetHeader("Content-Type", "image/svg+xml");
-    res->SendFile("www/github.svg");
+  http.Get("/apple-touch-icon.png", [](Request* req, Response* res) {
+    res->SendFile("www/apple-touch-icon.png");
   });
-  http.Get("/github-dark.svg", [](Request* req, Response* res) {
-    res->SetHeader("Content-Type", "image/svg+xml");
-    res->SendFile("www/github-dark.svg");
+  http.Get("/browserconfig.xml", [](Request* req, Response* res) {
+    res->SendFile("www/browserconfig.xml");
   });
-
-  // Hydra
-  http.Get("/hydra.png", [](Request* req, Response* res) {
-    res->SendFile("www/hydra.png");
+  http.Get("/favicon-16x16.png", [](Request* req, Response* res) {
+    res->SendFile("www/favicon-16x16.png");
   });
-
-  // Link
-  http.Get("/link.png", [](Request* req, Response* res) {
-    res->SendFile("www/link.png");
+  http.Get("/favicon-32x32.png", [](Request* req, Response* res) {
+    res->SendFile("www/favicon-32x32.png");
   });
-
-  // Nuclear
-  http.Get("/nuclear.png", [](Request* req, Response* res) {
-    res->SendFile("www/nuclear.png");
+  http.Get("/favicon.ico", [](Request* req, Response* res) {
+    res->SendFile("www/favicon.ico");
+  });
+  http.Get("/mstile-150x150.png", [](Request* req, Response* res) {
+    res->SendFile("www/mstile-150x150.png");
+  });
+  http.Get("/safari-pinned-tab.png", [](Request* req, Response* res) {
+    res->SendFile("www/safari-pinned-tab.png");
+  });
+  http.Get("/site.webmanifest", [](Request* req, Response* res) {
+    res->SendFile("www/site.webmanifest");
   });
 
   std::cout << "Starting server!" << std::endl;
