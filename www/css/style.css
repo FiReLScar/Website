@@ -1,0 +1,482 @@
+/* Global Styles */
+* {
+  margin: 0;
+  outline: 0;
+  font-family: 'JetBrains Mono', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+*:not(input) {
+  user-select: none;
+}
+
+/* Body */
+body.dark {
+  background-color: #2D2D2D;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Navbar Name */
+.navbar>svg.levi:not(.dark) {
+  fill: #4B4B4B;
+  cursor: pointer;
+}
+
+.navbar>svg.levi.dark {
+  fill: white;
+  cursor: pointer;
+}
+
+/* Navbar Mobile Menu */
+.navbar>svg:not(.levi) {
+  display: none;
+  width: 3rem;
+  color: #4B4B4B;
+}
+
+/* Navbar Links */
+.right>a {
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 1rem;
+}
+
+/* Navbar Links Hover */
+.right>a:not(.active) {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.right>a:not(.active):hover {
+  background-color: transparent;
+  text-shadow: none;
+}
+
+.right>a:not(.active):hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
+.right>a:not(.active):before {
+  display: block;
+  position: absolute;
+  left:0;
+  top:0;
+  height:0;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+/* Navbar Links Light */
+.right>a:not(.dark) {
+  color: #707070;
+}
+
+.right>a:not(.active, .dark):before {
+  background-color: #2d2d2d;
+}
+
+.right>a:not(.active, .dark):hover {
+  color: white;
+}
+
+/* Navbar Links Hover Dark */
+.right>a.dark {
+  color: white;
+}
+
+.right>a.dark:not(.active):before {
+  background-color: white;
+}
+
+.right>a.dark:not(.active):hover {
+  color: #2d2d2d;
+}
+
+/* Mobile Navmenu */
+.hero>.menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+/* Navmenu Links */
+.hero>.menu>a {
+  display: block;
+  margin: 1rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 42px;
+  font-weight: bold;
+}
+
+
+/* Navbar/Menu Link */
+.right>a:not(.active, .dark), .menu>a:not(.active) {
+  color: #4B4B4B;
+}
+
+a.active:not(.dark) {
+  background-color: #2D2D2D;
+  color: #F4F4F4;
+}
+
+a.active.dark {
+  color: #2D2D2D;
+  background-color: #F4F4F4;
+}
+
+
+
+
+
+
+/* Main Content */
+.main {
+  display: flex;
+}
+
+.left-top>.top, .left-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-top>.top>.title:not(.dark) {
+  font-size: 44px;
+  color: #606060;
+}
+
+.left-top>.top>.title.dark {
+  font-size: 44px;
+  color: #fff;
+}
+
+.left-top>.top>.subtitle {
+  font-size: 24px;
+  color: #AAAAAA;
+}
+
+/* Terminal */
+.terminal {
+  display: flex;
+  flex-direction: column;
+  background-color: #2D2D2D;
+  color: #F4F4F4;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #707070;
+}
+
+/* GitHub */
+.github {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.github>svg:not(.dark) {
+  fill: #191717;
+}
+
+.github>svg.dark {
+  fill: white;
+}
+
+.github>span {
+  margin-left: 0.5rem;
+}
+
+.github>span:not(.dark) {
+  color: #606060;
+}
+
+.github>span.dark {
+  color: #aaa;
+}
+
+/* Hint */
+.hint {
+  color: #AAAAAA;
+}
+
+.hint>span:not(.dark) {
+  color: #fff;
+  background-color: #2D2D2D;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.hint>span.dark {
+  color: #2D2D2D;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.line>.prompt {
+  color: #98c379;
+}
+
+.line>.prompt>span:nth-child(1), .line>.prompt>span:nth-child(3) {
+  color: #abb2bf;
+}
+
+.line>.prompt>span:nth-child(2) {
+  color: #61afef;
+}
+
+/* About */
+.main>.description {
+  margin-bottom: 8rem;
+  font-size: 24px;
+}
+
+.main>.title {
+  margin-bottom: 1rem;
+  font-size: 44px;
+}
+
+.main>.title.dark {
+  color: white;
+}
+
+.main>.title:not(.dark) {
+  color: #606060;
+}
+
+.main>.description.dark {
+  color: #ccc;
+}
+
+.main>.description:not(.dark) {
+  color: #606060;
+}
+
+
+/* Responsive Styles */
+/* Mobile */
+@media (min-width: 0px) and (max-width: 767px) {
+  .levi {
+    width: 93px;
+    height: 54.19px;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .navbar .right {
+    display: none;
+  }
+
+  .navbar>svg.open-menu {
+    display: block;
+  }
+
+  .main {
+    margin: 0 2rem;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-top {
+    text-align: center;
+  }
+
+  .terminal {
+    padding: 1rem;
+    margin-top: 3rem;
+    height: 200px;
+    width: 100%;
+  }
+
+  .top>.github {
+    display: none;
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  .hint {
+    font-size: 16px;
+  }
+
+  .main>.description {
+    font-size: 14px;
+    margin-bottom: 4rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .levi {
+    width: 93px;
+    height: 54.19px;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .navbar .right {
+    display: flex;
+  }
+
+  .navbar>svg.open-menu {
+    display: none;
+  }
+
+  .main {
+    margin: 0 2rem;
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-top {
+    text-align: center;
+  }
+
+  .terminal {
+    padding: 1rem;
+    margin-top: 3rem;
+    height: 300px;
+    width: 100%;
+  }
+
+  .top>.github {
+    display: none;
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .bottom>.hint {
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  .levi {
+    width: 118.19px;
+    height: 68.86px;
+  }
+
+  .navbar {
+    padding: 1rem 12rem;
+  }
+
+  .navbar .right {
+    display: flex;
+  }
+
+  .navbar>svg.open-menu, .navbar>svg.close-menu {
+    display: none;
+  }
+
+  .main {
+    margin-top: 4rem;
+    justify-content: space-between;
+    padding: 0 12rem;
+  }
+  
+  .left-top {
+    justify-content: space-between;
+  }
+
+  .hint {
+    font-size: 16px;
+  }
+
+  .terminal {
+    padding: 1rem;
+    height: 400px;
+    width: 800px;
+  }
+
+  .line span {
+    font-size: 24px;
+  }
+
+  .main>.github {
+    display: none;
+  }
+
+  .github>span {
+    margin-left: 1rem;
+    font-size: 24px;
+  }
+
+  .left-top>.top>.title:not(.dark) {
+    font-size: 80px;
+  }
+
+  .left-top>.top>.title.dark {
+    font-size: 80px;
+  }
+
+  .main>.title {
+    font-size: 80px;
+  }
+  
+  .left-top>.top>.subtitle {
+    font-size: 34px;
+  }
+}
+
+/* Really Unnecessary Widths That I Have For Some Reason */
+@media (min-width: 2500px) {
+  .hint {
+    font-size: 24px;
+  }
+}

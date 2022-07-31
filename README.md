@@ -1,11 +1,17 @@
 <h1 align="center">Portfolio - Levi Hicks</h1>
-<div align="center">
-   <i>To see the different versions of the website select a branch</i>
-</div>
 
-### Versions:
-  - [Link](https://github.com/FiReLScar/Website/tree/Link)
-  - [React](https://github.com/FiReLScar/Website/tree/React)
-  - [Next](https://github.com/FiReLScar/Website/tree/Next)
-  - [Express](https://github.com/FiReLScar/Website/tree/Express)
-  - [PHP](https://github.com/FiReLScar/Website/tree/PHP)
+## What is Link?
+Link is a basic webserver library that I made in C++
+
+## How is this hosted
+I used Nginx for SSL and to allow for subdomains, and hosted it on AWS.
+
+## How to run
+Make sure you have `build-essential` or gcc and make as well as [Link](https://github.com/N11Software/Link).
+> Warning: This will only work on Linux!
+```shell
+make
+```
+```shell
+make run
+```
