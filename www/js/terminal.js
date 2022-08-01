@@ -54,11 +54,19 @@ let cmdparser = cmd => {
   for (cmd in cmds) {
     // Split into arguments
     let args = cmds[cmd].trim().split(' ')
-    console.log(args)
-
+    
     switch (args[0]) {
       case 'clear':
         terminal.innerHTML = ''
+        break
+      case 'ls':
+        output('<div><a href="https://github.com/N11Software/Link">Link</a>\
+        &nbsp;<a href="https://github.com/N11Software/Hydra">Hydra</a>\
+        &nbsp;<a href="https://github.com/N11Software/kaos">kaos</a>\
+        &nbsp;<a href="https://github.com/N11Software">N11</a>\
+        &nbsp;<a href="https://github.com/N11Software/NullClient">NullClient</a>\
+        &nbsp;<a href="https://github.com/N11Software/neon">neon</a>\
+        &nbsp;<a href="https://github.com/N11Software/Nuclear">Nuclear</a></div>')
         break
       case 'help':
         if (args[1] == '-d' && args[2] != undefined) {

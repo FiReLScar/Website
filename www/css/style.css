@@ -277,6 +277,10 @@ a.active.dark {
   color: #61afef;
 }
 
+.line>div>a {
+  color: #61afef;
+}
+
 /* About */
 .main>.description {
   margin-bottom: 8rem;
