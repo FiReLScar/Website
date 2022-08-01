@@ -24,7 +24,7 @@ int main() {
   });
 
   http.Get("/js/terminal.js", [](Request* req, Response* res) {
-    res->SetHeader("Content-Type", "text/js; charset=UTF-8");
+    res->SetHeader("Content-Type", "text/javascript; charset=UTF-8");
     res->SendFile("www/js/terminal.js");
   });
   
