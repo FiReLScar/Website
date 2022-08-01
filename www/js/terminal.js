@@ -40,19 +40,71 @@ let output = data => {
 }
 
 let cmdparser = cmd => {
+  // Remove whitespace and split by ; and &&
   let cmds = cmd.replace(/\s+/g, ' ').trim().split(/;|&&/)
   for (cmd in cmds) {
+    // Split into arguments
     let args = cmds[cmd].trim().split(' ')
-    console.log(args[0])
+    console.log(args)
+
     switch (args[0]) {
       case 'clear':
         terminal.innerHTML = ''
-        break;
+        break
       case 'help':
-        output('<span>help - Show this help</span>')
-        break;
+        if (args[1] == '-d' && args[2] != undefined) {
+          if (args[2] == 'help') output('<span>help - Display information about builtin commands.</span>')
+          else if (args[2] == 'echo') output('<span>echo - Write arguments to the standard output.</span>')
+          else output('<span>bash: help: no help topics match `'+args[2]+'`.  Try `help help`.</span>')
+        } else if (args[1] == '-m') {
+          output('<span>help: man is disabled</span>')
+        } else if (args[1] == '-s' && args[2] != undefined) {
+          if (args[2] == 'help') output('<span>help: help [-dms] [pattern ...]</span>')
+          else if (args[2] == 'echo') output('<span>echo: echo [-neE] [arg ...]</span>')
+          else output('<span>bash: help: no help topics match `'+args[2]+'`.  Try `help help`.</span>')
+        } else {
+          output('<span>FiRe, version 1.0-release (web)</span>')
+          output('<span>These shell commands are defined internally. Type `help` to see this list.</span>')
+          output('<span>Type `help name` to find out more about the function `name`.</span>')
+          output('<span><br>&nbsp;echo [-neE] [arg ...]</span>')
+          output('<span>&nbsp;help [-dms] [pattern ...]</span>')
+        }
+        break
+      case 'echo':
+        let res = ''
+        let allowEscape = false
+        for (let x = 1; x < args.length; x++) {
+          if (args[x][0] == '-') {
+            for (let i = 1; i < args[x].length; i++) {
+              if (args[x][i] == 'e') allowEscape = true
+              else if (args[x][i] == 'E') allowEscape = false
+            }
+          } else {
+            console.log(args[x])
+            if (allowEscape) {
+              for (let i = 0; i < args[x].length; i++) {
+                if (args[x][i] == '\\') {
+                  if (args[x][i+1] == 'n') res += '<br>'
+                  else if (args[x][i+1] == 't') res += '&nbsp;&nbsp;&nbsp;&nbsp;'
+                  else if (args[x][i+1] == '\\') res += '\\'
+                  else res += args[x][i+1]
+                  i++
+                } else {
+                  res += args[x][i]
+                }
+              }
+            } else res += args[x] + ' '
+          }
+        }
+        line = document.createElement('div')
+        line.className = 'line'
+        let txt = document.createElement('span')
+        txt.innerText = res
+        line.appendChild(txt)
+        terminal.appendChild(line)
+        break
       case '':
-        break;
+        break
       default:
         output('<span>' + args[0] + ': command not found</span>')
     }
@@ -78,6 +130,10 @@ let runcmd = cmd => {
   terminal.appendChild(line)
   input.focus()
   terminal.scrollTop = terminal.scrollHeight
+  if (cmdhistory.length > 10) {
+    cmdhistory = []
+    cmdhistoryindex = 0
+  }
   cmdhistory.push(cmd)
   cmdhistoryindex = cmdhistory.length
 }
