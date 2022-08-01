@@ -280,6 +280,32 @@ a.active.dark {
   color: #606060;
 }
 
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.social.dark {
+  color: white;
+  fill: white;
+}
+
+.social:not(.dark) {
+  color: #606060;
+  fill: #606060;
+}
+
+.social>svg {
+  margin-right: 1rem;
+  width: 40px;
+}
+
 
 /* Responsive Styles */
 /* Mobile */
