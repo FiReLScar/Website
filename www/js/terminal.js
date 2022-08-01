@@ -62,6 +62,18 @@ let cmdparser = cmd => {
           if (args[2] == 'help') output('<span>help: help [-dms] [pattern ...]</span>')
           else if (args[2] == 'echo') output('<span>echo: echo [-neE] [arg ...]</span>')
           else output('<span>bash: help: no help topics match `'+args[2]+'`.  Try `help help`.</span>')
+        } else if (args[1] == "help") {
+          output('<span>help: help [-dms] [pattern ...]</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Display information about builtin commands.</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Displays brief summaries of builtin commands. If PATTERN is specified, gives detailed help on all commands matching PATTERN, otherwise the list of help topics is printed.</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Options:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output short description for each topic</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-m&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display usage in pseudo-manpage format</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output only a short usage synopsis for each topic matching PATTERN</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Arguments:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN&nbsp;&nbsp;&nbsp;Pattern specifying a help topic</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Exit Status:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Return success unless PATTERN is not found or an invalid option is given.</span>')
         } else {
           output('<span>FiRe, version 1.0-release (web)</span>')
           output('<span>These shell commands are defined internally. Type `help` to see this list.</span>')
