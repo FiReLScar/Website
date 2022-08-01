@@ -39,6 +39,15 @@ let output = data => {
   terminal.appendChild(line)
 }
 
+let outputsafe = data => {
+  line = document.createElement('div')
+  line.className = 'line'
+  let txt = document.createElement('span')
+  txt.innerText = data
+  line.appendChild(txt)
+  terminal.appendChild(line)
+}
+
 let cmdparser = cmd => {
   // Remove whitespace and split by ; and &&
   let cmds = cmd.replace(/\s+/g, ' ').trim().split(/;|&&/)
@@ -55,13 +64,13 @@ let cmdparser = cmd => {
         if (args[1] == '-d' && args[2] != undefined) {
           if (args[2] == 'help') output('<span>help - Display information about builtin commands.</span>')
           else if (args[2] == 'echo') output('<span>echo - Write arguments to the standard output.</span>')
-          else output('<span>bash: help: no help topics match `'+args[2]+'`.  Try `help help`.</span>')
+          else outputsafe('bash: help: no help topics match `'+args[2]+'`.  Try `help help`.')
         } else if (args[1] == '-m') {
           output('<span>help: man is disabled</span>')
         } else if (args[1] == '-s' && args[2] != undefined) {
           if (args[2] == 'help') output('<span>help: help [-dms] [pattern ...]</span>')
           else if (args[2] == 'echo') output('<span>echo: echo [-neE] [arg ...]</span>')
-          else output('<span>bash: help: no help topics match `'+args[2]+'`.  Try `help help`.</span>')
+          else outputsafe('bash: help: no help topics match `'+args[2]+'`.  Try `help help`.')
         } else if (args[1] == "help") {
           output('<span>help: help [-dms] [pattern ...]</span>')
           output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Display information about builtin commands.</span>')
@@ -74,6 +83,19 @@ let cmdparser = cmd => {
           output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PATTERN&nbsp;&nbsp;&nbsp;Pattern specifying a help topic</span>')
           output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Exit Status:</span>')
           output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Return success unless PATTERN is not found or an invalid option is given.</span>')
+        } else if (args[1] == "echo") {
+          output('<span>echo: echo [-eE] [arg ...]</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Write arguments to the standard output.</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Display the ARGs, separated by a single space character and followed by a newline, on the standard output.</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Options:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enable interpretation of the following backslash escapes</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;explicitly suppress interpretation of backslash escapes</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;`echo` interprets the following backslash-escaped characters:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new line</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;horizontal tab</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\\\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backslash</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Exit Status:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Return success unless a write error occurs.</span>')
         } else {
           output('<span>FiRe, version 1.0-release (web)</span>')
           output('<span>These shell commands are defined internally. Type `help` to see this list.</span>')
@@ -118,7 +140,7 @@ let cmdparser = cmd => {
       case '':
         break
       default:
-        output('<span>' + args[0] + ': command not found</span>')
+        outputsafe(args[0] + ': command not found')
     }
   }
 }
