@@ -257,8 +257,11 @@ a.active.dark {
   align-items: center;
 }
 
-.line>span:not(.prompt) {
+.line>.in {
   margin-left: 8px;
+}
+
+.line>:not(.prompt) {
   color: #abb2bf;
 }
 
@@ -366,6 +369,10 @@ a.active.dark {
     width: 100%;
   }
 
+  #terminal-input {
+    font-size: 16px;
+  }
+
   .top>.github {
     display: none;
   }
@@ -427,6 +434,10 @@ a.active.dark {
     margin-top: 3rem;
     height: 300px;
     width: 100%;
+  }
+
+  #terminal-input {
+    font-size: 16px;
   }
 
   .top>.github {
