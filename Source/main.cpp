@@ -22,6 +22,11 @@ int main() {
     res->SetHeader("Content-Type", "text/css; charset=UTF-8");
     res->SendFile("www/css/style.css");
   });
+
+  http.Get("/js/terminal.js", [](Request* req, Response* res) {
+    res->SetHeader("Content-Type", "text/js; charset=UTF-8");
+    res->SendFile("www/js/terminal.js");
+  });
   
   // About Page
   http.Get("/about", [](Request* req, Response* res) {
