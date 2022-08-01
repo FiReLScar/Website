@@ -193,6 +193,17 @@ a.active.dark {
   max-width: 100%;
   border-radius: 10px;
   border: 1px solid #707070;
+  overflow: scroll;
+}
+
+#terminal-input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: #abb2bf;
+  margin: 0;
+  margin-left: 8px;
+  padding: 0;
 }
 
 /* GitHub */
@@ -241,6 +252,16 @@ a.active.dark {
   padding: 0 5px;
 }
 
+.line {
+  display: flex;
+  align-items: center;
+}
+
+.line>span:not(.prompt) {
+  margin-left: 8px;
+  color: #abb2bf;
+}
+
 .line>.prompt {
   color: #98c379;
 }
@@ -278,6 +299,32 @@ a.active.dark {
 
 .main>.description:not(.dark) {
   color: #606060;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.social.dark {
+  color: white;
+  fill: white;
+}
+
+.social:not(.dark) {
+  color: #606060;
+  fill: #606060;
+}
+
+.social>svg {
+  margin-right: 1rem;
+  width: 40px;
 }
 
 
@@ -444,7 +491,7 @@ a.active.dark {
     width: 800px;
   }
 
-  .line span {
+  .line span, #terminal-input {
     font-size: 24px;
   }
 
