@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  1 04:58:49 2022
+# Make data base, printed on Wed Aug  3 05:26:28 2022
 
 # Variables
 
@@ -23,7 +23,9 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_CWD = /home/fire/Hydra
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_CWD = /home/fire
 # default
 MAKE_COMMAND := make
 # environment
@@ -44,8 +46,6 @@ PWD = /home/fire/Website
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
-# environment
-OLDPWD = /home/fire
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -55,13 +55,11 @@ VSCODE_CODE_CACHE_PATH = /home/fire/.config/Code/CachedData/3b889b090b5ad5793f52
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.O2T6P1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.2H83P1
 # default
 .LOADED := 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# environment
-GNOME_TERMINAL_SERVICE = :1.114
 # makefile
 MAKEFLAGS = pqrR
 # makefile
@@ -93,13 +91,15 @@ SNAP_REEXEC =
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 6803
+VSCODE_PID = 2383
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/0n3:@/tmp/.ICE-unix/1402,unix/0n3:/tmp/.ICE-unix/1402
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
+SESSION_MANAGER = local/0n3:@/tmp/.ICE-unix/1401,unix/0n3:/tmp/.ICE-unix/1401
 # automatic
 *F = $(notdir $*)
 # makefile (from 'Makefile', line 4)
@@ -123,11 +123,13 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
-SHLVL = 1
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/0796f6d1_fd2b_4ed1_b444_c22cc61be67a
+SHLVL = 0
 # environment
 MAKELEVEL := 0
+# environment
+IM_CONFIG_CHECK_ENV = 1
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
@@ -143,6 +145,8 @@ SNAP_USER_COMMON = /home/fire/snap/code/common
 # environment
 SNAP = /snap/code/102
 # environment
+INVOCATION_ID = 74fd369132d64247902be5480faf2157
+# environment
 SNAP_REVISION = 102
 # environment
 SNAP_REAL_HOME = /home/fire
@@ -157,7 +161,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -169,11 +173,13 @@ GNUMAKEFLAGS :=
 # environment
 LOGNAME = fire
 # environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
 SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := default
 # environment
-SYSTEMD_EXEC_PID = 1853
+SYSTEMD_EXEC_PID = 1423
 # environment
 DISPLAY = :0
 # environment
@@ -188,16 +194,22 @@ DISABLE_WAYLAND = 1
 SNAP_DATA = /var/snap/code/102
 # environment
 SNAP_CONTEXT = 594evH-NzXVM8ZjE_txHxo_D7RQZ_jhSXFq5wP4ZFMpEts2uhuAG
+# environment
+MANAGERPID = 1208
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2319
 # makefile (from 'Makefile', line 3)
 CPPSourceCode = $(call rwildcard,Source,*.cpp)
 # environment
-XDG_RUNTIME_DIR = /run/user/1000
+_ = /snap/code/102/usr/share/code/code
 # environment
-COLORTERM = truecolor
+XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/fire/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # makefile (from 'Makefile', line 5)
 Directories = $(wildcard Source/*)
+# environment
+JOURNAL_STREAM = 8:45553
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -210,8 +222,6 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-1d76451a-1.69.2-main.sock
-# environment
-TERM = xterm-256color
 # environment
 SNAP_NAME = code
 # environment
@@ -231,8 +241,6 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-VTE_VERSION = 6800
-# environment
 SNAP_COMMON = /var/snap/code/common
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
@@ -247,7 +255,7 @@ rwildcard = $(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=117/1024=11%, Rehash=0, Collisions=10/153=7%
+# Load=121/1024=12%, Rehash=0, Collisions=3/157=2%
 
 # Pattern-specific Variable Values
 
@@ -255,11 +263,11 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2051, inode 14027763): 13 files, no impossibilities.
-# Source/main.cpp (device 2051, inode 14027899): could not be opened.
-# Source (device 2051, inode 14027894): 3 files, no impossibilities.
+# . (device 2051, inode 14027763): 14 files, no impossibilities.
+# Source/main.cpp (device 2051, inode 14027892): could not be opened.
+# Source (device 2051, inode 14027890): 3 files, no impossibilities.
 
-# 16 files, no impossibilities in 3 directories.
+# 17 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -273,16 +281,16 @@ Build/%.o: Source/%.cpp
 
 default: Build/main.o
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 12):
 	@g++ $(Objects) -std=c++2a -llink -pthread -o Website
 
 # Not a target:
- 
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-29 04:55:43.286760666
+#  Last modified 2022-08-01 07:22:38.94820956
 #  File has been updated.
 #  Successfully updated.
 
@@ -320,12 +328,12 @@ Build/main.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 25 / storage = 224 B / avg = 8 B
-# current buf: size = 8162 B / used = 224 B / count = 25 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 234 B / avg = 9 B
+# current buf: size = 8162 B / used = 234 B / count = 26 / avg = 9 B
 
-# strcache performance: lookups = 34 / hit rate = 26%
+# strcache performance: lookups = 35 / hit rate = 25%
 # hash-table stats:
-# Load=25/8192=0%, Rehash=0, Collisions=0/34=0%
-# Finished Make data base on Mon Aug  1 04:58:49 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/35=0%
+# Finished Make data base on Wed Aug  3 05:26:28 2022
 
  
