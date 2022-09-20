@@ -335,6 +335,15 @@ a.active.dark {
   width: 40px;
 }
 
+.terminal::-webkit-scrollbar {
+  display: none;
+}
+
+.terminal {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 /* Responsive Styles */
 /* Mobile */
