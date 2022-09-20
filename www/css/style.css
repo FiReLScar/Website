@@ -61,7 +61,7 @@ body.dark {
 /* Navbar Links Hover */
 .right>a:not(.active) {
   position: relative;
-  transition: background-color, text-shadow 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  transition: height 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
 .right>a:not(.active):hover {
@@ -84,7 +84,7 @@ body.dark {
   width: 100%;
   z-index: -1;
   content: '';
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  transition: height 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
 /* Navbar Links Light */
