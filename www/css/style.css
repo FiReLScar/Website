@@ -61,7 +61,7 @@ body.dark {
 /* Navbar Links Hover */
 .right>a:not(.active) {
   position: relative;
-  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  transition: background-color, text-shadow 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
 
 .right>a:not(.active):hover {

@@ -1,0 +1,12 @@
+[Unit]
+Description=LeviHicks.dev
+
+[Service]
+Type=simple
+Restart=always
+User=web
+WorkingDirectory=/web/levihicks.dev/
+ExecStart=/web/levihicks.dev/Link
+
+[Install]
+WantedBy=multi-user.target
