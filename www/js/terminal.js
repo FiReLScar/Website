@@ -60,24 +60,36 @@ let cmdparser = cmd => {
         terminal.innerHTML = ''
         break
       case 'ls':
-        output('<div><a href="https://github.com/N11Software/Link">Link</a>\
-        &nbsp;<a href="https://github.com/N11Software/Hydra">Hydra</a>\
-        &nbsp;<a href="https://github.com/N11Software/kaos">kaos</a>\
-        &nbsp;<a href="https://github.com/N11Software">N11</a>\
-        &nbsp;<a href="https://github.com/N11Software/NullClient">NullClient</a>\
-        &nbsp;<a href="https://github.com/N11Software/neon">neon</a>\
-        &nbsp;<a href="https://github.com/N11Software/Nuclear">Nuclear</a></div>')
+        if (args[1] == '-l') {
+          output('<div><a href="https://github.com/N11Software/Link">https://github.com/N11Software/Link</a>\
+          <br><a href="https://github.com/N11Software/Hydra">https://github.com/N11Software/Hydra</a>\
+          <br><a href="https://github.com/N11Software/kaos">https://github.com/N11Software/kaos</a>\
+          <br><a href="https://github.com/N11Software">https://github.com/N11Software/N11</a>\
+          <br><a href="https://github.com/N11Software/NullClient">https://github.com/N11Software/NullClient</a>\
+          <br><a href="https://github.com/N11Software/neon">https://github.com/N11Software/neon</a>\
+          <br><a href="https://github.com/N11Software/Nuclear">https://github.com/N11Software/Nuclear</a></div>')
+        } else {
+          output('<div><a href="https://github.com/N11Software/Link">Link</a>\
+          &nbsp;<a href="https://github.com/N11Software/Hydra">Hydra</a>\
+          &nbsp;<a href="https://github.com/N11Software/kaos">kaos</a>\
+          &nbsp;<a href="https://github.com/N11Software">N11</a>\
+          &nbsp;<a href="https://github.com/N11Software/NullClient">NullClient</a>\
+          &nbsp;<a href="https://github.com/N11Software/neon">neon</a>\
+          &nbsp;<a href="https://github.com/N11Software/Nuclear">Nuclear</a></div>')
+        }
         break
       case 'help':
         if (args[1] == '-d' && args[2] != undefined) {
           if (args[2] == 'help') output('<span>help - Display information about builtin commands.</span>')
           else if (args[2] == 'echo') output('<span>echo - Write arguments to the standard output.</span>')
+          else if (args[2] == 'ls') output('<span>ls - Output a list of projects.</span>')
           else outputsafe('bash: help: no help topics match `'+args[2]+'`.  Try `help help`.')
         } else if (args[1] == '-m') {
           output('<span>help: man is disabled</span>')
         } else if (args[1] == '-s' && args[2] != undefined) {
           if (args[2] == 'help') output('<span>help: help [-dms] [pattern ...]</span>')
           else if (args[2] == 'echo') output('<span>echo: echo [-neE] [arg ...]</span>')
+          else if (args[2] == 'ls') output('<span>ls: ls [-l]</span>')
           else outputsafe('bash: help: no help topics match `'+args[2]+'`.  Try `help help`.')
         } else if (args[1] == "help") {
           output('<span>help: help [-dms] [pattern ...]</span>')
@@ -104,6 +116,14 @@ let cmdparser = cmd => {
           output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\\\\&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;backslash</span>')
           output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Exit Status:</span>')
           output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Return success unless a write error occurs.</span>')
+        } else if (args[1] == "ls") {
+          output('<span>ls: ls [-l]</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;List projects.</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Outputs a list of projects as hyperlinks.</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Options:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-l&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replace the project names with their respective links</span>')
+          output('<span><br>&nbsp;&nbsp;&nbsp;&nbsp;Exit Status:</span>')
+          output('<span>&nbsp;&nbsp;&nbsp;&nbsp;Return success unless an invalid option is given.</span>')
         } else {
           output('<span>FiRe, version 1.0-release (web)</span>')
           output('<span>These shell commands are defined internally. Type `help` to see this list.</span>')
