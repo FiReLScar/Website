@@ -12,6 +12,7 @@ export default function Home() {
     const pi1 = document.getElementById('pi1')
     const pia = document.getElementById('pia')
     const pil = document.getElementById('pil')
+    if (pi1 == null || pia == null || pil == null) return
 
     pia.style.top = pi1.offsetTop - pi1.offsetHeight - 3 + 'px'
     pia.style.left = pi1.offsetLeft - pi1.offsetWidth - 3 + 'px'
@@ -19,45 +20,60 @@ export default function Home() {
 
     let scrolling = false
 
-    document.getElementById('body').onscroll = () => {
+    let body = document.getElementById('body')
+    let arrow = document.getElementById('arrow')
+    if (body == null) return
+    body.onscroll = () => {
       if (scrolling) return
-      let page = document.getElementById('body').scrollTop / window.innerHeight
+      if (body == null) return
+      let page = body.scrollTop / window.innerHeight
       let currentPi = document.getElementById('pi' + Math.round(page + 1))
+      if (currentPi == null) return
       // center progress indicator
       pia.style.top = currentPi.offsetTop - currentPi.offsetHeight - 3 + 'px'
       pia.style.left = currentPi.offsetLeft - currentPi.offsetWidth - 3 + 'px'
       // remove arrow at bottom
-      if (document.getElementById('body').lastElementChild.offsetTop - document.getElementById('body').scrollTop < window.innerHeight) {
-        document.getElementById('arrow').classList.add('transition-all', 'duration-500', 'opacity-0', "pointer-events-none")
-      } else document.getElementById('arrow').classList.remove('opacity-0', "pointer-events-none")
+      if (arrow == null || body.lastElementChild == null) return
+      let last = body.lastChild as HTMLElement
+      if (last.offsetTop - body.scrollTop < window.innerHeight) {
+        arrow.classList.add('transition-all', 'duration-500', 'opacity-0', "pointer-events-none")
+      } else arrow.classList.remove('opacity-0', "pointer-events-none")
       // add logo
-      if (document.getElementById('body').scrollTop > 0) {
-        document.getElementById('levi').classList.add('opacity-100')
-        document.getElementById('levi-lg').classList.add('opacity-0')
+      let logo = document.getElementById('levi')
+      let logolg = document.getElementById('levi-lg')
+      if (logo == null || logolg == null) return
+      if (body.scrollTop > 0) {
+        logo.classList.add('opacity-100')
+        logolg.classList.add('opacity-0')
       } else {
-        document.getElementById('levi').classList.remove('opacity-100')
-        document.getElementById('levi-lg').classList.remove('opacity-0')
+        logo.classList.remove('opacity-100')
+        logolg.classList.remove('opacity-0')
       }
     }
 
     // add click event to progress indicators
     for (let i = 0; i < pil.children.length; i++) {
-      pil.children[i].onclick = () => {
+      if (pil.children[i] == null) return
+      pil.children[i].addEventListener("click", () => {
         scrolling = true
-        document.getElementById('body').scrollTop = (i-1) * window.innerHeight
+        if (body == null) return
+        body.scrollTop = (i-1) * window.innerHeight
         let currentPi = document.getElementById('pi' + i)
+        if (currentPi == null) return
         // center progress indicator
         pia.style.top = currentPi.offsetTop - currentPi.offsetHeight - 3 + 'px'
         pia.style.left = currentPi.offsetLeft - currentPi.offsetWidth - 3 + 'px'
         setTimeout(() => {
           scrolling = false
         }, 500)
-      }
+      })
     }
 
     // add click event to arrow
-    document.getElementById('arrow').onclick = () => {
-      document.getElementById('body').scrollTop += window.innerHeight
+    if (arrow == null) return
+    arrow.onclick = () => {
+      if (body == null) return
+      body.scrollTop += window.innerHeight
     }
   }, [])
   let projClasses = "bg-stone-300 rounded flex-1 expand"
