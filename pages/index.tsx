@@ -76,7 +76,6 @@ export default function Home() {
       body.scrollTop += window.innerHeight
     }
   }, [])
-  let projClasses = "bg-stone-300 rounded flex-1 expand"
   return (
     <>
       <Head>
@@ -93,16 +92,16 @@ export default function Home() {
           <span className="lg:text-4xl text-2xl font-black text-stone-500 animate-typing">Fullstack Engineer</span>
         </div>
         <div className={`flex flex-col w-full py-36 lg:px-32 px-8 gap-8 bg-stone-200 h-screen snap-center ${jbnf.className}`}>
-          <span className="text-2xl font-black text-stone-700">Projects:</span>
+          <span className="text-2xl 2xl:text-3xl font-black text-stone-700">Projects:</span>
           <div className="flex lg:flex-col flex-row h-full w-full gap-2 lg:gap-4 xl:gap-8">
             <div className="flex lg:flex-row flex-col h-full gap-2 lg:gap-4 w-full xl:gap-8">
-              <div className={`${projClasses}`}></div>
-              <div className={`${projClasses}`}></div>
+              <div className="bg-stone-300 rounded flex-1 expand"></div>
+              <div className="bg-stone-300 rounded flex-1 expand"></div>
             </div>
             <div className="flex lg:flex-row flex-col h-full gap-2 lg:gap-4 w-full xl:gap-8">
-              <div className={`${projClasses}`}></div>
-              <div className={`${projClasses}`}></div>
-              <div className={`${projClasses}`}></div>
+              <div className="bg-stone-300 rounded flex-1 expand"></div>
+              <div className="bg-stone-300 rounded flex-1 expand"></div>
+              <div className="bg-stone-300 rounded flex-1 expand"></div>
             </div>
           </div>
         </div>
