@@ -106,7 +106,12 @@ export default function Home() {
                   <span className="text-lg font-bold text-stone-300 ml-4 mb-4">64 bit kernel written in C++</span>
                 </div>
               </Link>
-              <div className="bg-stone-300 rounded flex-1 expand" style={{backgroundImage: "url('/link-hero.png')"}}></div>
+              <Link href="/projects/link" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
+                <div className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end" style={{backgroundImage: "url('/link-hero.png')"}}>
+                  <span className="text-2xl font-black text-stone-200 ml-4">Link</span>
+                  <span className="text-lg font-bold text-stone-300 ml-4 mb-4">Webserver written in C++</span>
+                </div>
+              </Link>
             </div>
             <div className="flex lg:flex-row flex-col h-full gap-2 lg:gap-4 w-full xl:gap-8">
               <Link href="/projects/n11" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
