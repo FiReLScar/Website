@@ -102,34 +102,34 @@ export default function Home() {
             <div className="flex lg:flex-row flex-col h-full gap-2 lg:gap-4 w-full xl:gap-8">
               <Link href="/projects/hydra" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
                 <div className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end" style={{backgroundImage: "url('/hydra-hero.png')"}}>
-                  <span className="text-2xl font-black text-stone-200 ml-4">Hydra</span>
-                  <span className="text-lg font-bold text-stone-300 ml-4 mb-4">64 bit kernel written in C++</span>
+                  <span className="lg:text-2xl text-lg font-black text-stone-200 ml-4">Hydra</span>
+                  <span className="lg:text-lg text-sm font-bold text-stone-300 ml-4 mb-4">64 bit kernel written in C++</span>
                 </div>
               </Link>
               <Link href="/projects/link" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
                 <div className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end" style={{backgroundImage: "url('/link-hero.png')"}}>
-                  <span className="text-2xl font-black text-stone-200 ml-4">Link</span>
-                  <span className="text-lg font-bold text-stone-300 ml-4 mb-4">Webserver written in C++</span>
+                  <span className="lg:text-2xl text-lg font-black text-stone-200 ml-4">Link</span>
+                  <span className="lg:text-lg text-sm font-bold text-stone-300 ml-4 mb-4">Webserver written in C++</span>
                 </div>
               </Link>
             </div>
             <div className="flex lg:flex-row flex-col h-full gap-2 lg:gap-4 w-full xl:gap-8">
               <Link href="/projects/n11" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
                 <div className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end" style={{backgroundImage: "url('/null-hero.png')"}}>
-                  <span className="text-2xl font-black text-stone-200 ml-4">N11</span>
-                  <span className="text-lg font-bold text-stone-300 ml-4 mb-4">Search Engine written in C++</span>
+                  <span className="lg:text-2xl text-lg font-black text-stone-200 ml-4">N11</span>
+                  <span className="lg:text-lg text-sm font-bold text-stone-300 ml-4 mb-4">Search Engine written in C++</span>
                 </div>
               </Link>
-              <Link href="/projects/lights" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
+              <Link href="/projects/bank" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
                 <div className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end" style={{backgroundImage: "url('/bank-hero.png')"}}>
-                  <span className="text-2xl font-black text-stone-200 ml-4">Bank</span>
-                  <span className="text-lg font-bold text-stone-300 ml-4 mb-4">API for local bank</span>
+                  <span className="lg:text-2xl text-lg font-black text-stone-200 ml-4">Bank</span>
+                  <span className="lg:text-lg text-sm font-bold text-stone-300 ml-4 mb-4">API for local bank</span>
                 </div>
               </Link>
               <Link href="/projects/lights" className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end">
                 <div className="bg-stone-300 rounded-lg flex-1 expand flex flex-col justify-end" style={{backgroundImage: "url('/lights-hero.png')"}}>
-                  <span className="text-2xl font-black text-stone-200 ml-4">Lights</span>
-                  <span className="text-lg font-bold text-stone-300 ml-4 mb-4">API for smart lights</span>
+                  <span className="lg:text-2xl text-lg font-black text-stone-200 ml-4">Lights</span>
+                  <span className="lg:text-lg text-sm font-bold text-stone-300 ml-4 mb-4">API for smart lights</span>
                 </div>
               </Link>
             </div>
