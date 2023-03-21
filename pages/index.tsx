@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { JetBrains_Mono } from 'next/font/google'
 import Link from 'next/link'
 import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { ExclamationTriangleIcon } from '@heroicons/react/24/solid'
 import { useEffect } from 'react'
 
 const jbnf = JetBrains_Mono({ subsets: ['latin'] })
@@ -75,6 +77,68 @@ export default function Home() {
       if (body == null) return
       body.scrollTop += window.innerHeight
     }
+
+    let btn = document.getElementById('send-email')
+    if (btn == null) return
+    let Error = () => {
+      let form = document.getElementById('form-email')
+      let error = document.getElementById('error-email')
+      if (form == null || error == null) return
+      form.classList.add('opacity-0', 'pointer-events-none')
+      if (error.style.height == "") error.style.height = form.offsetHeight + 'px'
+      setTimeout(() => {
+        form?.classList.add('hidden')
+        error?.classList.remove('hidden')
+        error?.classList.add('opacity-100')
+      }, 500)
+    }
+
+    let SendEmail = () => {
+      let email = document.getElementById('email-email') as HTMLInputElement
+      let message = document.getElementById('message-email') as HTMLInputElement
+      if (email == null || message == null) return
+      let loader = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-spin"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>'
+      let retry = document.getElementById('retry-email')
+      if (retry == null) return
+      retry.innerHTML = "Retry " + loader
+      if (btn == null) return
+      btn.innerHTML = "Sending " + loader
+      fetch('https://api.levihicks.dev/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email.value,
+          message: message.value
+        })
+      }).then(res => {
+        if (res.status == 200) {
+          let form = document.getElementById('form-email')
+          let success = document.getElementById('success-email')
+          if (form == null || success == null) return
+          form.classList.add('opacity-0', 'pointer-events-none')
+          success.style.height = form.offsetHeight + 'px'
+          setTimeout(() => {
+            form?.classList.add('hidden')
+            success?.classList.remove('hidden')
+            success?.classList.add('opacity-100')
+          }, 500)
+          email.value = ""
+          message.value = ""
+        } else Error()
+      }).catch(err => {
+        console.error(err)
+        if (retry == null) return
+        retry.innerHTML = "Retry"
+        Error()
+      })
+    }
+    btn.onclick = SendEmail
+
+    let retry = document.getElementById('retry-email')
+    if (retry == null) return
+    retry.onclick = SendEmail
   }, [])
   return (
     <>
@@ -135,11 +199,97 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={`flex flex-col justify-center gap-8 bg-stone-200 h-screen snap-center ${jbnf.className}`}>
-          
+        <div className={`flex flex-col gap-8 py-36 lg:px-32 px-8 bg-stone-200 h-screen overflow-hidden snap-center ${jbnf.className}`}>
+          <span className="text-2xl 2xl:text-3xl font-black text-stone-700">About Me:</span>
+          <div className="flex lg:flex-row flex-col-reverse lg:gap-0 gap-4 justify-center items-center">
+            <span className="2xl:text-2xl text-lg font-bold w-full text-stone-500">
+              I am a fullstack developer, I work with C++, NextJS, and basically anything else, I pick up new things very quickly and I am always looking for new challenges.
+            </span>
+            <div className="w-full flex justify-center items-center">
+              <img src="/me.png" className="lg:w-64 lg:h-64 h-32 w-32 rounded-full" />
+            </div>
+          </div>
         </div>
-        <div className={`flex flex-col justify-center gap-8 bg-stone-200 h-screen snap-center ${jbnf.className}`}>
-          
+        <div className={`flex flex-col gap-8 py-36 lg:px-32 px-8 bg-stone-200 snap-center h-screen overflow-y-auto ${jbnf.className}`}>
+          <div className="flex lg:flex-row flex-col lg:w-full h-full gap-8">
+            <div className="flex lg:w-full h-full flex-col lg:gap-8 gap-4">
+              <span className="text-2xl 2xl:text-3xl font-black text-stone-700">Socials:</span>
+              <div className="flex flex-col justify-center gap-2 w-fit lg:mx-0 mx-auto">
+                <Link href="https://github.com/FiReLScar">
+                  <div className="flex flex-row justify-center items-center gap-4 2xl:text-2xl text-lg font-bold bg-stone-800 rounded-full px-8 py-2 text-stone-200">
+                    <span>
+                      GitHub
+                    </span>
+                    <img src="/github.svg" alt="" className="w-6 h-6" />
+                  </div>
+                </Link>
+                <Link href="https://www.linkedin.com/in/firelscar/">
+                  <div className="flex flex-row justify-center items-center gap-4 2xl:text-2xl text-lg font-bold bg-blue-700 rounded-full px-8 py-2 text-stone-200">
+                    <span>
+                      LinkedIn
+                    </span>
+                    <img src="/linkedin.png" alt="" className="w-4 h-4" />
+                  </div>
+                </Link>
+                <Link href="https://twitter.com/FiReLScar">
+                  <div className="flex flex-row justify-center items-center gap-4 2xl:text-2xl text-lg font-bold bg-sky-500 rounded-full px-8 py-2 text-stone-200">
+                    <span>
+                      Twitter
+                    </span>
+                    <img src="/twitter.svg" alt="" className="w-6 h-6" />
+                  </div>
+                </Link>
+                <Link href="https://discord.com/users/382192202991796224">
+                  <div className="flex flex-row justify-center items-center gap-4 2xl:text-2xl text-lg font-bold bg-indigo-700 rounded-full px-8 py-2 text-stone-200">
+                    <span>
+                      Discord
+                    </span>
+                    <img src="/discord.svg" alt="" className="w-6 h-6" />
+                  </div>
+                </Link>
+                <Link href="https://youtube.com/@FiReLScar">
+                  <div className="flex flex-row justify-center items-center gap-4 2xl:text-2xl text-lg font-bold bg-red-500 rounded-full px-8 py-2 text-stone-200">
+                    <span>
+                      YouTube
+                    </span>
+                    <img src="/youtube.png" alt="" className="w-6 h-6" />
+                  </div>
+                </Link>
+                <Link href="https://twitch.tv/FiReLScar">
+                  <div className="flex flex-row justify-center items-center gap-4 2xl:text-2xl text-lg font-bold bg-violet-800 rounded-full px-8 py-2 text-stone-200">
+                    <span>
+                      Twitch
+                    </span>
+                    <img src="/twitch.svg" alt="" className="w-6 h-6" />
+                  </div>
+                </Link>
+              </div>
+            </div>
+            <div className="h-full rounded-full bg-stone-100 lg:block hidden" style={{width: '2px'}}>&nbsp;</div>
+              <div className="flex lg:w-full h-full flex-col lg:gap-8 gap-4">
+                <span className="text-2xl 2xl:text-3xl font-black text-stone-700">Contact Me:</span>
+                <div className="flex flex-col gap-4 transition-opacity duration-500" id="form-email">
+                  <input type="email" placeholder="johnd@business.org" className="bg-stone-100 rounded-lg py-2 px-4 text-gray-800 outline-none" id="email-email" />
+                  <textarea placeholder="Your message" className="bg-stone-100 rounded-lg py-2 px-4 text-gray-800 outline-none lg:h-48 h-24" id="message-email" />
+                  <button className="bg-stone-800 rounded-lg py-2 px-4 text-gray-200 outline-none mb-4 flex gap-2 justify-center" id="send-email">
+                    Send
+                  </button>
+                </div>
+                <div className="flex flex-row justify-center items-center gap-4 hidden opacity-0 transition-opacity duration-500" id="success-email">
+                  <CheckCircleIcon className="w-8 h-8 text-green-500" />
+                  <span className="text-2xl 2xl:text-3xl font-black text-green-500">Email sent!</span>
+                </div>
+                <div className="flex flex-col justify-center items-center gap-8 hidden opacity-0 transition-opacity duration-500" id="error-email">
+                  <div className="flex flex-row gap-4">
+                    <ExclamationTriangleIcon className="w-8 h-8 text-yellow-500" />
+                    <span className="text-2xl 2xl:text-3xl font-black text-yellow-500">Error sending email!</span>
+                  </div>
+                  <button className="bg-stone-800 rounded-lg py-2 px-4 text-gray-200 outline-none mb-4 flex gap-2" id="retry-email">
+                    Retry
+                  </button>
+                </div>
+              </div>
+          </div>
         </div>
       </div>
       <div className="lg:flex hidden flex-col h-screen gap-6 w-8 fixed right-4 top-0 justify-center items-center" id="pil">
