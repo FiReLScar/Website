@@ -6,6 +6,7 @@ import { ArrowDownCircleIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/solid'
 import { useEffect } from 'react'
+import axios from 'axios'
 
 const jbnf = JetBrains_Mono({ subsets: ['latin'] })
 
@@ -103,36 +104,39 @@ export default function Home() {
       retry.innerHTML = "Retry " + loader
       if (btn == null) return
       btn.innerHTML = "Sending " + loader
-      fetch('https://api.levihicks.dev/email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          email: email.value,
-          message: message.value
-        })
-      }).then(res => {
-        if (res.status == 200) {
-          let form = document.getElementById('form-email')
-          let success = document.getElementById('success-email')
-          if (form == null || success == null) return
-          form.classList.add('opacity-0', 'pointer-events-none')
-          success.style.height = form.offsetHeight + 'px'
-          setTimeout(() => {
-            form?.classList.add('hidden')
-            success?.classList.remove('hidden')
-            success?.classList.add('opacity-100')
-          }, 500)
-          email.value = ""
-          message.value = ""
-        } else Error()
-      }).catch(err => {
-        console.error(err)
-        if (retry == null) return
-        retry.innerHTML = "Retry"
-        Error()
-      })
+      let req = new XMLHttpRequest()
+      req.open("POST", "https://api.levihicks.dev/api/email", true)
+      req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+      req.onreadystatechange = () => {
+        if (req.readyState == 4) {
+          let btn = document.getElementById('send-email')
+          let retry = document.getElementById('retry-email')
+          if (btn == null || retry == null) return
+          btn.innerHTML = "Send"
+          retry.innerHTML = "Retry"
+          if (req.status == 200) {
+            let form = document.getElementById('form-email')
+            let success = document.getElementById('success-email')
+            let error = document.getElementById('error-email')
+            if (form == null || success == null || error == null) return
+            if (error.style.height != "") success.style.height = error.offsetHeight + 'px'
+            error.classList.add('opacity-0', 'pointer-events-none')
+            form.classList.add('opacity-0', 'pointer-events-none')
+            if (success.style.height == "") success.style.height = form.offsetHeight + 'px'
+            setTimeout(() => {
+              form?.classList.add('hidden')
+              error?.classList.add('hidden')
+              success?.classList.remove('hidden')
+              success?.classList.add('opacity-100')
+            }, 500)
+            email.value = ""
+            message.value = ""
+          } else {
+            Error()
+          }
+        }
+      }
+      req.send("email=" + email.value + "&message=" + message.value)
     }
     btn.onclick = SendEmail
 
